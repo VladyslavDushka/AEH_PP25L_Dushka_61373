@@ -342,7 +342,7 @@ class Klient {
             }
             System.out.println("\n===KONIEC ZMIANY===");
             System.out.println("Zadowoleni klienci: "+ punkty + "/" + liczbaKlientow);
-            System.out.printf("Zalkowity utarg: %.2f zl %n" , zarobki);
+            System.out.printf("Calkowity utarg: %.2f zl %n" , zarobki);
         }
 
 }
