@@ -315,18 +315,18 @@ public class SymulatorKawiarni {
             }
 
             if (prodWybrany instanceof Modyfikowalny) {
-                Modyfikowalny modyfikowalny = (Modyfikowalny) prodWybrany;
+                Modyfikowalny mod = (Modyfikowalny) prodWybrany;
                 boolean gotowe = false;
                 while (!gotowe && !prodWybrany.isZepsuty()) {
                     System.out.println("Dodatki? (1: Mleko [+2 zl], 2: Cukier, 3: Cytryna [+1 zl], ENTER: Gotowe!)");
                     String modyfikacja = scanner.nextLine();
 
-                    if (modyfikacja.equals("1")) {modyfikowalny.dodajMleko();}
-                    else if (modyfikacja.equals("2")) {modyfikowalny.dodajCukier();}
+                    if (modyfikacja.equals("1")) {mod.dodajMleko();}
+                    else if (modyfikacja.equals("2")) {mod.dodajCukier();}
                     else if (modyfikacja.equals("3")){
                         if (prodWybrany instanceof Herbata) ((Herbata)prodWybrany).dodajCytryne();
                         else System.out.println(" Cytryna tylko do herbaty! ");
-                    } else { gotowe = true;}
+                    } else { gotowe = true; }
                 }
             }
 
@@ -348,9 +348,9 @@ public class SymulatorKawiarni {
                 System.out.println(" Klient niezadowolony (Zle zamowienie)! Brak zaplaty.");
             }
         }
-        
-        
-        
+
+
+
         System.out.println("\n===KONIEC ZMIANY===");
         System.out.println("Zadowoleni klienci: "+ punkty + "/" + liczbaKlientow);
         System.out.printf("Calkowity utarg: %.2f zl %n" , zarobki);
